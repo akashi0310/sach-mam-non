@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import datetime
 
 st.set_page_config(layout="wide")
 
@@ -16,11 +17,11 @@ if "cart" not in st.session_state:
 st.subheader("Danh sách sách")
 
 cols = st.columns(3)
-img_path = os.path.basename(row["image"])
 
 for index, row in df.iterrows():
+    img_path = os.path.basename(row["image"])
     with cols[index % 3]:
-        st.image(row["image"],st.image(f"images/{img_path}", use_column_width=True))
+        st.image(f"images/{img_path}", use_column_width=True)
         st.write(f"### {row['name']}")
         st.write(f"Giá: {row['price']:,} VNĐ")
 
