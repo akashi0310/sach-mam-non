@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 st.title("📚 Sách Giáo Dục Mầm Non")
 
 # Đọc Excel
-df = pd.read_excel(r"C:\Users\lapla\.vscode\code_space\nghich tí\data\products.xlsx")
+df = pd.read_excel("data/products.xlsx")
 
 # Giỏ hàng
 if "cart" not in st.session_state:
